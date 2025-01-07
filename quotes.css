@@ -1,0 +1,136 @@
+:root {
+    --background-color: #1e1e1e;
+    --text-color: #ffffff;
+    --header-color: #2c2c2c; /* Dunklerer Header im Darkmode */
+    --button-color: #ffcc00;
+    --button-text-color: #000000;
+    --hover-color: #ffd700;
+    --image-glow: rgba(255, 204, 0, 0.5);
+    --quote-box-bg: #444444; /* Graue Hintergrundfarbe für die Box */
+    --quote-box-border: #ffcc00; /* Goldener Rand für die Box */
+    --quote-box-glow: rgba(255, 204, 0, 0.5); /* Glow für die Box */
+}
+
+body.light-mode {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --header-color: #f1f1f1;
+    --button-color: #ffcc00;
+    --button-text-color: #000000;
+    --hover-color: #ffd700;
+    --image-glow: rgba(255, 204, 0, 0.2);
+    --quote-box-bg: #f1f1f1; /* Heller Hintergrund für die Box im Lightmode */
+    --quote-box-border: #ff5722; /* Dunklerer Rand für die Box im Lightmode */
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--header-color);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Logo wird größer beim Hover */
+}
+
+.quote-container {
+    text-align: center;
+    padding: 50px;
+}
+
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+    box-shadow: 0 0 20px var(--image-glow);
+}
+
+.motivational-image {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.quote-box {
+    background-color: var(--quote-box-bg);
+    border: 2px solid var(--quote-box-border);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px; /* Abstand zwischen Bild und Zitat */
+    box-shadow: 0 0 20px var(--quote-box-glow); /* Glow für die Box */
+}
+
+blockquote {
+    font-size: 24px;
+    margin: 0;
+}
+
+cite {
+    font-size: 18px;
+    color: var(--text-color);
+    display: block;
+    margin-top: 10px; /* Abstand zwischen Zitat und Autor */
+}
+
+.quote-button {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 15px; /* Abstand zwischen Box und Button */
+}
+
+.quote-button:hover {
+    background-color: var(--hover-color);
+}
+
+.quote-button:active {
+    transform: translateY(4px);
+}
+
+.quote-button.shake {
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(-5px); }
+    50% { transform: translate(5px); }
+    75% { transform: translate(-5px); }
+    100% { transform: translate(0); }
+}
+
+#mode-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+}
